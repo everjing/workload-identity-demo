@@ -72,7 +72,7 @@ metadata:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: quick-start
+  name: wi-demo
   namespace: ${serviceAccountNamespace}
   labels:
     azure.workload.identity/use: "true"
@@ -94,6 +94,6 @@ EOF
 kubectl apply -f workload-identity.yaml
 
 # check pod's log if the secrets are successfully retrieved from keyvault
-kubectl logs quick-start -n ${serviceAccountNamespace}
+kubectl logs wi-demo -n ${serviceAccountNamespace}
 
   
