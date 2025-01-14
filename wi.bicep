@@ -59,7 +59,7 @@ resource myFederatedIdentityCredentials 'Microsoft.ManagedIdentity/userAssignedI
   }
 }
 
-# Create a standard azure keyvault resource
+# Create a standard azure keyvault resource whose access policies allows managed identity created above to get secrets from keyvault. 
 resource myKeyVault 'Microsoft.KeyVault/vaults@2023-02-01' = {
   name: '${uniqueString(resourceGroup().id)}'
   location: location
